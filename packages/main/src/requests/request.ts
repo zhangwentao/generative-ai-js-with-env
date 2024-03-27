@@ -15,10 +15,13 @@
  * limitations under the License.
  */
 
+import { config } from 'dotenv';
 import { RequestOptions } from "../../types";
 import { GoogleGenerativeAIError } from "../errors";
-
-const BASE_URL = "https://generativelanguage.googleapis.com";
+config();
+const { GOOGLE_AI_BASE_URL } = process.env;
+// const BASE_URL = "https://generativelanguage.googleapis.com";
+const BASE_URL = GOOGLE_AI_BASE_URL;
 
 export const DEFAULT_API_VERSION = "v1";
 
